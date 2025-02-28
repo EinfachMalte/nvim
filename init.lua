@@ -45,6 +45,38 @@ parser_config.blade = {
   filetype = "blade",
 }
 
+local lspconfig = require "lspconfig"
+local nvlsp = require "nvchad.configs.lspconfig"
+
+lspconfig.emmet_ls.setup {
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
+  filetypes = {
+    "css",
+    "eruby",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "less",
+    "sass",
+    "scss",
+    "svelte",
+    "pug",
+    "typescriptreact",
+    "vue",
+    "php",
+    "blade",
+  },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["output.selfClosingStyle"] = "xhtml",
+      },
+    },
+  },
+}
+
 vim.schedule(function()
   require "mappings"
 end)
