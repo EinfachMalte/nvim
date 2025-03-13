@@ -13,6 +13,18 @@ return {
     end,
   },
   {
+    "jiangmiao/auto-pairs",
+  },
+  {
+    "yuezk/vim-js",
+  },
+  {
+    "HerringtonDarkholme/yats.vim",
+  },
+  {
+    "maxmellon/vim-jsx-pretty",
+  },
+  {
     "stevearc/conform.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
